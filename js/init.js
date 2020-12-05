@@ -1,3 +1,12 @@
+//registro del service workers
+if(navigator.serviceWorker){
+    if(window.location.href.includes("localhost")){
+        navigator.serviceWorker.register("/sw.js");
+    } else {
+        //esta servido en un servidor web
+        navigator.serviceWorker.register("/rickmortyduoc/sw.js");
+    }
+}
 
 window.mostrarPersonaje = function(){
     //tomar todos los datos del personaje y renderizarlo dentro de un clan del molde
